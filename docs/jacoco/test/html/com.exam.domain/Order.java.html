@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Order.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">order-service</a> &gt; <a href="index.source.html" class="el_package">com.exam.domain</a> &gt; <span class="el_source">Order.java</span></div><h1>Order.java</h1><pre class="source lang-java linenums">package com.exam.domain;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * Represents an Order that contains a collection of items.
+ *
+ * This class is immutable since it is sent to other systems for processing that
+ * should not be able to change it in any way.
+ * 
+ * Orders contain a collection of items that may or may not be taxable.  For taxable items
+ * the amount of tax to charge on a taxable item is calculated using half-round up with a precision
+ * of 2.  
+ * 
+ * However, the requirements aren't clear on the rounding details on tax calculations 
+ * so half-round up is assumed with rounding to a precision of 2 for every order item done before summing
+ * the cost of all the items in order to get a total for the order.
+ * 
+ * Note: If business rules were to instead specify rounding is to be done after done summation then the 
+ * rounding differences could result in different total amounts in certain edge cases.
+ * 
+ * TODO: confirm the business rules for tax calculations as they relate to rounding and calculating 
+ * order totals.  Depending on business needs we may need to consider allowing dynamic specification of 
+ * rounding business rules (e.g. whether or not to round for each item or just round the total and what 
+ * rounding mode and scale to use).
+ *
+ * &lt;p&gt;Copyright: Copyright (c) 2018&lt;/p&gt;
+ * &lt;p&gt;Company: Exams are us&lt;/p&gt;
+ * 
+ * @author Joe Blow
+ * @author John Grove
+ * @version 1.0.1
+ */
+public class Order implements Serializable
+{
+  private static final long serialVersionUID = 1L;
+
+  private final List&lt;OrderItem&gt; orderItems;
+
+  /**
+   * Create a new Order. When creating a new order an array of orderItems is passed in
+   * (per the documented requirements) Note: The order class is immutable so items cannot 
+   * be added or removed nor can quantities be changed once the class has been instantiated.
+   * 
+   * Orders must contain at least one item with a quantity greater than zero.
+   * 
+   * @param orderItemsArray
+   *          the array of items to be added to the order.
+   */
+  public Order(OrderItem[] orderItemsArray)
+<span class="fc" id="L59">  {</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">    if (orderItemsArray.length &lt; 1)</span>
+    {
+<span class="fc" id="L62">      throw new IllegalArgumentException(&quot;An order must have at least one item.&quot;);</span>
+    }
+
+<span class="fc" id="L65">    this.orderItems = Collections.unmodifiableList(Arrays.asList(orderItemsArray));</span>
+<span class="fc" id="L66">  }</span>
+
+  /**
+   * @param taxRate
+   *          the rate at which taxable items in the order should be taxed.  
+   *          Note: this is a rate so for a 3% tax pass in 'new BigDecimal(&quot;.03&quot;)'
+   * 
+   * @return the total order cost after the tax has been applied
+   */
+  public BigDecimal getOrderTotal(BigDecimal taxRate)
+  {
+<span class="fc" id="L77">    BigDecimal total = BigDecimal.ZERO;</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">    for (OrderItem orderItem : orderItems)</span>
+    {
+<span class="fc" id="L80">      total = total.add(orderItem.getOrderItemTotal(taxRate));</span>
+<span class="fc" id="L81">    }</span>
+    
+<span class="fc" id="L83">    return total;</span>
+  }
+ 
+  /**
+   * Get all the items that make up the order sorted by item name as an unmodifiable collection.  If the same items appear 
+   * multiple times on the order it will multiple times in the returned collection.
+   * 
+   * TODO: confirm whether or not duplicate items should be ignored and only a unique collection of items should be returned
+   * and consider using stream processing to collect the items from the order item array.
+   * 
+   * @return an unmodifiable collection of unique items sorted by item name (case-insensitive)
+   */
+  public Collection&lt;Item&gt; getItems()
+  { 
+<span class="fc" id="L97">    List&lt;Item&gt; items = new ArrayList&lt;&gt;(orderItems.size());</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">    for (OrderItem orderItem : orderItems)</span>
+    {
+<span class="fc" id="L100">      items.add(orderItem.getItem());</span>
+<span class="fc" id="L101">    }</span>
+    
+<span class="fc" id="L103">    List&lt;Item&gt; sortedItems = items.stream().sorted(Comparator.comparing(Item::getName, String.CASE_INSENSITIVE_ORDER)).collect(Collectors.toList()); </span>
+<span class="fc" id="L104">    return Collections.unmodifiableList(sortedItems);</span>
+  }
+
+  @Override
+  public String toString()
+  {
+    //TODO: consider implementing a prettier toString for the Order object with line breaks between items (possibly using streams with a joining collector):
+<span class="fc" id="L111">    return String.format(&quot;Order [orderItems=%s]&quot;, orderItems);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

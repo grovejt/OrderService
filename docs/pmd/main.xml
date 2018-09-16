@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.4.1" timestamp="2018-09-16T10:15:11.084">
+<file name="D:\Dev\Projects\Sonic\Exam\order-service\src\main\java\com\exam\domain\AbstractItem.java">
+<violation beginline="12" endline="105" begincolumn="10" endcolumn="1" rule="CyclomaticComplexity" ruleset="Code Size" package="com.exam.domain" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
+The class 'AbstractItem' has a Cyclomatic Complexity of 3 (Highest = 13).
+</violation>
+<violation beginline="12" endline="105" begincolumn="10" endcolumn="1" rule="ModifiedCyclomaticComplexity" ruleset="Code Size" package="com.exam.domain" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/codesize.html#ModifiedCyclomaticComplexity" priority="3">
+The class 'AbstractItem' has a Modified Cyclomatic Complexity of 3 (Highest = 13).
+</violation>
+<violation beginline="12" endline="105" begincolumn="10" endcolumn="1" rule="StdCyclomaticComplexity" ruleset="Code Size" package="com.exam.domain" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/codesize.html#StdCyclomaticComplexity" priority="3">
+The class 'AbstractItem' has a Standard Cyclomatic Complexity of 3 (Highest = 13).
+</violation>
+<violation beginline="23" endline="23" begincolumn="23" endcolumn="30" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="AbstractItem" method="AbstractItem" variable="key" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'key' is not assigned and could be declared final
+</violation>
+<violation beginline="23" endline="23" begincolumn="33" endcolumn="43" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="AbstractItem" method="AbstractItem" variable="name" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="23" endline="23" begincolumn="46" endcolumn="61" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="AbstractItem" method="AbstractItem" variable="price" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'price' is not assigned and could be declared final
+</violation>
+<violation beginline="54" endline="54" begincolumn="5" endcolumn="24" rule="AvoidFinalLocalVariable" ruleset="Controversial" package="com.exam.domain" class="AbstractItem" method="hashCode" variable="prime" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#AvoidFinalLocalVariable" priority="3">
+Avoid using final local variables, turn them into fields
+</violation>
+<violation beginline="55" endline="56" begincolumn="5" endcolumn="66" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="com.exam.domain" class="AbstractItem" method="hashCode" variable="result" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'result' (lines '55'-'56').
+</violation>
+<violation beginline="68" endline="68" begincolumn="25" endcolumn="34" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="AbstractItem" method="equals" variable="obj" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'obj' is not assigned and could be declared final
+</violation>
+<violation beginline="68" endline="96" begincolumn="10" endcolumn="3" rule="CyclomaticComplexity" ruleset="Code Size" package="com.exam.domain" class="AbstractItem" method="equals" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/codesize.html#CyclomaticComplexity" priority="3">
+The method 'equals' has a Cyclomatic Complexity of 13.
+</violation>
+<violation beginline="68" endline="96" begincolumn="10" endcolumn="3" rule="ModifiedCyclomaticComplexity" ruleset="Code Size" package="com.exam.domain" class="AbstractItem" method="equals" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/codesize.html#ModifiedCyclomaticComplexity" priority="3">
+The method 'equals' has a Modified Cyclomatic Complexity of 13.
+</violation>
+<violation beginline="68" endline="96" begincolumn="10" endcolumn="3" rule="StdCyclomaticComplexity" ruleset="Code Size" package="com.exam.domain" class="AbstractItem" method="equals" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/codesize.html#StdCyclomaticComplexity" priority="3">
+The method 'equals' has a Standard Cyclomatic Complexity of 13.
+</violation>
+<violation beginline="68" endline="96" begincolumn="10" endcolumn="3" rule="NPathComplexity" ruleset="Code Size" package="com.exam.domain" class="AbstractItem" method="equals" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/codesize.html#NPathComplexity" priority="3">
+The method equals() has an NPath complexity of 512
+</violation>
+<violation beginline="76" endline="76" begincolumn="5" endcolumn="43" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="AbstractItem" method="equals" variable="other" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'other' could be declared final
+</violation>
+</file>
+<file name="D:\Dev\Projects\Sonic\Exam\order-service\src\main\java\com\exam\domain\MaterialItem.java">
+<violation beginline="16" endline="16" begincolumn="23" endcolumn="30" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="MaterialItem" method="MaterialItem" variable="key" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'key' is not assigned and could be declared final
+</violation>
+<violation beginline="16" endline="16" begincolumn="33" endcolumn="43" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="MaterialItem" method="MaterialItem" variable="name" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="16" endline="16" begincolumn="46" endcolumn="61" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="MaterialItem" method="MaterialItem" variable="price" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'price' is not assigned and could be declared final
+</violation>
+</file>
+<file name="D:\Dev\Projects\Sonic\Exam\order-service\src\main\java\com\exam\domain\Order.java">
+<violation beginline="46" endline="46" begincolumn="33" endcolumn="42" rule="BeanMembersShouldSerialize" ruleset="JavaBeans" package="com.exam.domain" class="Order" variable="orderItems" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/javabeans.html#BeanMembersShouldSerialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="58" endline="58" begincolumn="16" endcolumn="42" rule="UseVarargs" ruleset="Design" package="com.exam.domain" class="Order" method="Order" variable="orderItemsArray" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/design.html#UseVarargs" priority="4">
+Consider using varargs for methods or constructors which take an array the last parameter.
+</violation>
+<violation beginline="58" endline="58" begincolumn="16" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="Order" method="Order" variable="orderItemsArray" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'orderItemsArray' is not assigned and could be declared final
+</violation>
+<violation beginline="60" endline="60" begincolumn="34" endcolumn="34" rule="AvoidLiteralsInIfCondition" ruleset="Controversial" package="com.exam.domain" class="Order" method="Order" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#AvoidLiteralsInIfCondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="75" endline="80" begincolumn="7" endcolumn="61" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="com.exam.domain" class="Order" method="getOrderTotal" variable="orderItem" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'orderItem' (lines '75'-'80').
+</violation>
+<violation beginline="75" endline="75" begincolumn="35" endcolumn="52" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="Order" method="getOrderTotal" variable="taxRate" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'taxRate' is not assigned and could be declared final
+</violation>
+<violation beginline="77" endline="80" begincolumn="7" endcolumn="61" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="com.exam.domain" class="Order" method="getOrderTotal" variable="total" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'total' (lines '77'-'80').
+</violation>
+<violation beginline="78" endline="78" begincolumn="10" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="Order" method="getOrderTotal" variable="orderItem" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'orderItem' could be declared final
+</violation>
+<violation beginline="95" endline="100" begincolumn="7" endcolumn="36" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="com.exam.domain" class="Order" method="getItems" variable="orderItem" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'UR'-anomaly for variable 'orderItem' (lines '95'-'100').
+</violation>
+<violation beginline="97" endline="97" begincolumn="5" endcolumn="57" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="Order" method="getItems" variable="items" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'items' could be declared final
+</violation>
+<violation beginline="98" endline="98" begincolumn="10" endcolumn="28" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="Order" method="getItems" variable="orderItem" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'orderItem' could be declared final
+</violation>
+<violation beginline="103" endline="103" begincolumn="5" endcolumn="147" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="Order" method="getItems" variable="sortedItems" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'sortedItems' could be declared final
+</violation>
+</file>
+<file name="D:\Dev\Projects\Sonic\Exam\order-service\src\main\java\com\exam\domain\OrderItem.java">
+<violation beginline="39" endline="39" begincolumn="34" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="OrderItem" method="OrderItem" variable="item" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'item' is not assigned and could be declared final
+</violation>
+<violation beginline="39" endline="39" begincolumn="20" endcolumn="31" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="OrderItem" method="OrderItem" variable="quantity" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'quantity' is not assigned and could be declared final
+</violation>
+<violation beginline="41" endline="41" begincolumn="20" endcolumn="20" rule="AvoidLiteralsInIfCondition" ruleset="Controversial" package="com.exam.domain" class="OrderItem" method="OrderItem" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#AvoidLiteralsInIfCondition" priority="3">
+Avoid using Literals in Conditional Statements
+</violation>
+<violation beginline="62" endline="62" begincolumn="39" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="OrderItem" method="getOrderItemTotal" variable="taxRate" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'taxRate' is not assigned and could be declared final
+</violation>
+<violation beginline="64" endline="64" begincolumn="5" endcolumn="120" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="OrderItem" method="getOrderItemTotal" variable="subtotal" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'subtotal' could be declared final
+</violation>
+<violation beginline="65" endline="65" begincolumn="5" endcolumn="46" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="OrderItem" method="getOrderItemTotal" variable="tax" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'tax' could be declared final
+</violation>
+<violation beginline="82" endline="82" begincolumn="21" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="OrderItem" method="getTax" variable="subTotal" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'subTotal' is not assigned and could be declared final
+</violation>
+<violation beginline="82" endline="82" begincolumn="42" endcolumn="59" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="OrderItem" method="getTax" variable="taxRate" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'taxRate' is not assigned and could be declared final
+</violation>
+<violation beginline="82" endline="92" begincolumn="3" endcolumn="3" rule="DefaultPackage" ruleset="Controversial" package="com.exam.domain" class="OrderItem" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#DefaultPackage" priority="3">
+Use explicit scoping instead of the default package private level
+</violation>
+<violation beginline="86" endline="89" begincolumn="7" endcolumn="91" rule="DataflowAnomalyAnalysis" ruleset="Controversial" package="com.exam.domain" class="OrderItem" method="getTax" variable="roundedTaxAmount" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'roundedTaxAmount' (lines '86'-'89').
+</violation>
+</file>
+<file name="D:\Dev\Projects\Sonic\Exam\order-service\src\main\java\com\exam\domain\ServiceItem.java">
+<violation beginline="16" endline="16" begincolumn="22" endcolumn="29" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="ServiceItem" method="ServiceItem" variable="key" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'key' is not assigned and could be declared final
+</violation>
+<violation beginline="16" endline="16" begincolumn="32" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="ServiceItem" method="ServiceItem" variable="name" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+<violation beginline="16" endline="16" begincolumn="45" endcolumn="60" rule="MethodArgumentCouldBeFinal" ruleset="Optimization" package="com.exam.domain" class="ServiceItem" method="ServiceItem" variable="price" externalInfoUrl="https://pmd.github.io/pmd-5.4.1/pmd-java/rules/java/optimizations.html#MethodArgumentCouldBeFinal" priority="3">
+Parameter 'price' is not assigned and could be declared final
+</violation>
+</file>
+</pmd>

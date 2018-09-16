@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderItem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">order-service</a> &gt; <a href="index.source.html" class="el_package">com.exam.domain</a> &gt; <span class="el_source">OrderItem.java</span></div><h1>OrderItem.java</h1><pre class="source lang-java linenums">package com.exam.domain;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+/**
+ * An item to be added to an order including the quantity of the item for the
+ * order. Per business rules an order item must contain a non-null item with a
+ * quantity. Quantity must be a positive integer value.
+ * 
+ * The cost for an order item (getOrderItemTotal) is calculated using half-up
+ * rounding to the nearest penny. Cost without taxes is calculated first and
+ * rounded to the nearest penny then tax on that is calculated and rounded to
+ * the nearest penny. Then these two numbers are summed to get the total cost of
+ * the order item. TODO: confirm these cost calculation business rules.
+ * 
+ * TODO: confirm these assumed business rules: * are zero and negative
+ * quantities allowed? (assumption is that quantities must be greater than zero)
+ * * are quantities restricted to integer values or are decimals allowed?
+ * (assumption is that only integer values are allowed) * is cost half-rounded
+ * up to the penny after any applicable taxes are applied? (assumption is that
+ * this is true)
+ * 
+ * @author John Grove
+ * @version 1.0.1
+ *
+ */
+public class OrderItem implements Serializable
+{
+  private static final long serialVersionUID = 1L;
+  
+  private static final int ROUNDING_SCALE = 2;
+<span class="fc" id="L34">  private static final RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;</span>
+   
+  private final int quantity;
+  private final Item item;
+
+  public OrderItem(int quantity, Item item)
+<span class="fc" id="L40">  {</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">    if (quantity &lt; 1)</span>
+    {
+<span class="fc" id="L43">      throw new IllegalArgumentException(&quot;Quantity must be greater than zero when creating an OrderItem.&quot;);</span>
+    }
+    
+<span class="fc" id="L46">    this.quantity = quantity;</span>
+<span class="fc" id="L47">    this.item = item;</span>
+<span class="fc" id="L48">  }</span>
+
+  /**
+   * Calculate the total cost for this item as the price of the item multiplied by
+   * the quantity and then adding in the applicable tax if the item is taxable.
+   * Rounding is to the nearest penny.
+   * 
+   * @param taxRate
+   *          the rate at which taxable items in the order should be taxed. Note:
+   *          this is a rate so for a 3% tax pass in 'new BigDecimal(&quot;.03&quot;)'
+   * 
+   * @return the cost after the tax has been applied, rounded to the nearest penny
+   *         (2 decimal places)
+   */
+  public BigDecimal getOrderItemTotal(BigDecimal taxRate)
+  {
+<span class="fc" id="L64">    BigDecimal subtotal = item.getPrice().multiply(BigDecimal.valueOf(quantity)).setScale(ROUNDING_SCALE, ROUNDING_MODE);</span>
+<span class="fc" id="L65">    BigDecimal tax = getTax(subtotal, taxRate);</span>
+    
+<span class="fc" id="L67">    return subtotal.add(tax);</span>
+  }
+
+  /**
+   * Get the tax on this orderItem rounded to the nearest penny. If the item is
+   * not taxable then this will return zero (&quot;0.00&quot;)
+   * 
+   * Note: visibility os package private to make testing easier.
+   * 
+   * @param subTotal
+   *          the amount to calculate the tax for
+   * @param taxRate
+   *          taxRate as a rate (e.g a 3% tax should be passed in as new BigDecimal(&quot;0.03&quot;)
+   * @return the tax amount for this item rounded to the nearest penny.
+   */
+  BigDecimal getTax(BigDecimal subTotal, BigDecimal taxRate)
+  {
+    // if the item is taxable calculate the tax and round the result (tax amounts
+    // are zero if the item is not taxable)
+<span class="fc" id="L86">    BigDecimal roundedTaxAmount = new BigDecimal(&quot;0.00&quot;);</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">    if (item.isTaxable())</span>
+    {
+<span class="fc" id="L89">      roundedTaxAmount = subTotal.multiply(taxRate).setScale(ROUNDING_SCALE, ROUNDING_MODE);</span>
+    }
+<span class="fc" id="L91">    return roundedTaxAmount;</span>
+  }
+
+  /**
+   * @return the quantity
+   */
+  public int getQuantity()
+  {
+<span class="nc" id="L99">    return quantity;</span>
+  }
+
+  /**
+   * @return the item
+   */
+  public Item getItem()
+  {
+<span class="fc" id="L107">    return item;</span>
+  }
+
+  @Override
+  public String toString()
+  {
+<span class="fc" id="L113">    return String.format(&quot;OrderItem [quantity=%s, item=%s]&quot;, quantity, item);</span>
+  }
+  
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
