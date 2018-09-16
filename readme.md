@@ -68,5 +68,15 @@ After a full gradle build the following updated documentation will be available:
 * code coverage metrics: [./build/reports/jacoco/test/html/index.html](./build/reports/jacoco/test/html/index.html)
 * static code analysis (pmd): [./build/reports/pmd/main.html](./build/reports/pmd/main.html)
 
+----
+**Misc**
 
+To push to pivotal web services:
+` > cf push`
+
+To access running app on pivotal:
+* Acuator health check: [https://order-service-brash-kudu.cfapps.io/actuator/health](https://order-service-brash-kudu.cfapps.io/actuator/health) 
+* Get a dummy order (json): [https://order-service-brash-kudu.cfapps.io/order](https://order-service-brash-kudu.cfapps.io/order)
+
+ 
  
