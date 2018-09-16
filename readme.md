@@ -44,9 +44,24 @@ Make any changes needed to the Order object to meet the requirements stated abov
 
 
 ---
-**Notes**
-1. Clone the repo
-2. Run a full gradle build
+**Build Notes**
+
+Perform the following steps to pull down the repo and build locally from the command line:
+1. Make a directory to hold the project:
+
+   ` > md JohnGrove`
+   
+   ` > cd JohnGrove`
+
+2. Clone the repo
+
+   ` > git clone https://github.com/grovejt/order-service.git `
+   
+3. Run a full gradle build
+
+   ` > cd order-service`
+   
+   ` > .\gradlew.bat build`
 
 After a full gradle build the following updated documentation will be available:
 * javadocs: [./build/docs/javadoc/index.html](./build/docs/javadoc/index.html)
