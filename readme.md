@@ -1,17 +1,19 @@
-** Sonic Order Exam **
+**Sonic Order Exam**
 
 * John Grove
 * grovejt@gmail.com
 * [https://jackgrove.com](https://jackgrove.com/)
 
-This is an implementation of the Sonic exam project consisting of a simple order domain object that contains a collection of order items and an calculate the cost of an order taking into account which items are taxable and which are not.
+This is an implementation of the Sonic exam project consisting of a simple order domain object that contains a collection of order items and calculates the cost of an order, taking into account which items are taxable and which are not.
 
 The original exam specifications are in: [./docs/SonicJavaProgrammingExercise.md](./docs/SonicJavaProgrammingExercise.md)
 
-The source code files relevant to this exam are under [.src/main/java/com/exam/domain](src/main/java/com/exam/domain) and [src/main/java/com/exam/domain](./src/test/java/com/exam/domain) 
+The source code files relevant to this exam are under
+* [.src/main/java/com/exam/domain](src/main/java/com/exam/domain) 
+* [src/test/java/com/exam/domain](./src/test/java/com/exam/domain) 
 
 ---
-** Program requirements: **
+**Program requirements:**
 
 You are working on a team developing an e-commerce application. One of your tasks is to complete the implementation of the Order class that an intern has started along with any other class or classes on which it depends. 
 
@@ -19,7 +21,7 @@ The Order constructor requires an array of OrderItems. The business rules dictat
 
 An Order, once constructed, is immutable (no one should be able to change it). 
 
-The Order object also needs to be Serializable as it will be distributed across multiple VM’s. 
+The Order object also needs to be Serializable as it will be distributed across multiple VMâ€™s. 
 
 It is critical that the method that returns the order-total returns accurately to the nearest penny.
 
@@ -29,22 +31,22 @@ Make any changes needed to the Order object to meet the requirements stated abov
 
 ---
 
-** Simplified Class Diagram **
+**Simplified Class Diagram**
 
 ![](./docs/DomainClassOverview.png?raw=true "Simplified Class Diagram")
 ---
 
-** Latest Reports: **
+**Latest Reports:**
 
-* javadocs: [./docs/javadoc/index.html](./docs/javadoc/index.html)
-* code coverage metrics: [./docs/jacoco/test/html/index.html](./docs/jacoco/test/html/index.html)
-* static code analysis (pmd): [./docs/pmd/pmd/main.html](./docs/pmd/pmd/main.html)
+* javadocs: [./docs/javadoc/index.html](http://htmlpreview.github.com/?https://github.com/grovejt/order-service/blob/master/docs/javadoc/index.html)
+* code coverage metrics: [./docs/jacoco/test/html/index.html](http://htmlpreview.github.com/?https://github.com/grovejt/order-service/blob/master/docs/jacoco/test/html/index.html)
+* static code analysis (pmd): [./docs/pmd/main.html](http://htmlpreview.github.com/?https://github.com/grovejt/order-service/blob/master/docs/pmd/main.html)
 
 
 ---
-** Notes **
-1) Clone the repo
-2) Run a full gradle build
+**Notes**
+1. Clone the repo
+2. Run a full gradle build
 
 After a full gradle build the following updated documentation will be available:
 * javadocs: [./build/docs/javadoc/index.html](./build/docs/javadoc/index.html)
