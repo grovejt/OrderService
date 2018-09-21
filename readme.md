@@ -12,6 +12,8 @@ The source code files relevant to this exam are under
 * [.src/main/java/com/exam/domain](src/main/java/com/exam/domain) 
 * [src/test/java/com/exam/domain](./src/test/java/com/exam/domain) 
 
+Note - this project will later be incorporated into my microservices training and proof of concept project underway at: https://github.com/grovejt/git-config-repo for details
+
 ---
 **Program requirements:**
 
@@ -28,6 +30,7 @@ It is critical that the method that returns the order-total returns accurately t
 There is an expected future requirement that Items be used as keys in a Hashtable so address this issue now.
 
 Make any changes needed to the Order object to meet the requirements stated above, although you should not have to add any more public methods. This API will be used by many developers so implement all common methods.
+
 
 ---
 
