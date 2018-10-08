@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "07f2575f-f753-4bc4-b1da-40a84edcb0d1",
+		"name": "order-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get order",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\" : 0,\r\n\t\"name\" : \"\",\r\n\t\"email\" : \"\",\r\n\t\"phone\" : 0,\r\n\t\"address\" : {\r\n\t\t\"flatNo\" : \"\",\r\n\t\t\"street\" : \"\",\r\n\t\t\"city\" : \"\",\r\n\t\t\"state\" : \"\",\r\n\t\t\"zip\" : 0,\r\n\t\t\"country\" : \"\"\r\n\t}\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5555/orders/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"orders",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\" : 0,\r\n\t\"name\" : \"\",\r\n\t\"email\" : \"\",\r\n\t\"phone\" : 0,\r\n\t\"address\" : {\r\n\t\t\"flatNo\" : \"\",\r\n\t\t\"street\" : \"\",\r\n\t\t\"city\" : \"\",\r\n\t\t\"state\" : \"\",\r\n\t\t\"zip\" : 0,\r\n\t\t\"country\" : \"\"\r\n\t}\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5555/orders/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
