@@ -39,9 +39,13 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile("org.springframework.boot:spring-boot-devtools")
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "org.springframework.boot:spring-boot-devtools"
+	
+	// add in support for hateoas:
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	
 	// Add in health checks and metrics using spring actuator:
-	compile("org.springframework.boot:spring-boot-starter-actuator")
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation "org.springframework.boot:spring-boot-starter-actuator"
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

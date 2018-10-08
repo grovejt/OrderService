@@ -61,7 +61,7 @@ public class OrderTest
         new OrderItem(1, serviceItem3), 
         new OrderItem(1, materialItem1)};
     
-    testOrder1 = new Order(orderitems);
+    testOrder1 = new Order(1L, orderitems);
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -69,7 +69,7 @@ public class OrderTest
   {
     // An OrderItem must have a quantity greater than zero:
     OrderItem[] emptyOrderItems = new OrderItem[] {};
-    new Order(emptyOrderItems);
+    new Order(1L, emptyOrderItems);
   }
   
   @Test 
@@ -80,7 +80,7 @@ public class OrderTest
     // Create a really simple order for a simple test:
     Item materialItem1 = new MaterialItem(1L, ITEM_NAME_1, new BigDecimal("5"));
     OrderItem[] orderItems = new OrderItem[] {new OrderItem(2, materialItem1)};
-    Order testOrder = new Order(orderItems);
+    Order testOrder = new Order(1L, orderItems);
     
     BigDecimal taxRate = new BigDecimal(".1");
     BigDecimal expectedOrderCost = new BigDecimal("11.00");

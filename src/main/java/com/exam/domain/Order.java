@@ -43,6 +43,8 @@ public class Order implements Serializable
 {
   private static final long serialVersionUID = 1L;
 
+  private final Long orderId;
+  
   private final List<OrderItem> orderItems;
 
   /**
@@ -55,13 +57,13 @@ public class Order implements Serializable
    * @param orderItemsArray
    *          the array of items to be added to the order.
    */
-  public Order(OrderItem[] orderItemsArray)
+  public Order(Long orderId, OrderItem[] orderItemsArray)
   {
     if (orderItemsArray.length < 1)
     {
       throw new IllegalArgumentException("An order must have at least one item.");
     }
-
+    this.orderId = orderId;
     this.orderItems = Collections.unmodifiableList(Arrays.asList(orderItemsArray));
   }
 
@@ -104,10 +106,18 @@ public class Order implements Serializable
     return Collections.unmodifiableList(sortedItems);
   }
 
+  
+  public Long getOrderId()
+  {
+    return orderId;
+  }
+  
   @Override
   public String toString()
   {
     //TODO: consider implementing a prettier toString for the Order object with line breaks between items (possibly using streams with a joining collector):
     return String.format("Order [orderItems=%s]", orderItems);
   }
+
+
 }
