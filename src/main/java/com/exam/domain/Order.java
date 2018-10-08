@@ -39,7 +39,7 @@ import java.util.stream.Collectors;
  * @author John Grove
  * @version 1.0.1
  */
-public class Order implements Serializable
+public final class Order implements Serializable
 {
   private static final long serialVersionUID = 1L;
 
@@ -102,6 +102,7 @@ public class Order implements Serializable
       items.add(orderItem.getItem());
     }
     
+    //TODO: make a defensive copy here:
     List<Item> sortedItems = items.stream().sorted(Comparator.comparing(Item::getName, String.CASE_INSENSITIVE_ORDER)).collect(Collectors.toList()); 
     return Collections.unmodifiableList(sortedItems);
   }
